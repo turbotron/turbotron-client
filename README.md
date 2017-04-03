@@ -1,5 +1,13 @@
 # Turbotron
 
+## Usage
+ 
+tart the development server with this command:
+  
+```
+npm start
+```
+
 ## Setup
  
 ```
