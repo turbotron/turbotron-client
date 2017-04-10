@@ -27,7 +27,15 @@
     "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1"
   }
 }

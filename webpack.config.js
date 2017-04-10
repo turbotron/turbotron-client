@@ -18,6 +18,11 @@ module.exports = {
           'babel-loader',
         ],
       },
+      {
+        test: /\.scss$/,
+        //loader: 'style|css|sass?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+        loader: ['style-loader', 'css-loader', 'sass-loader']
+      },
     ],
   },
   resolve: {
