@@ -1,26 +1,18 @@
-const express = require('express');
-const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js');
-const app = express();
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config.js');
 
-const compiler = webpack(webpackConfig);
-
-app.use(express.static(__dirname + '/www'));
-
-app.use(webpackDevMiddleware(compiler, {
+new WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
   hot: true,
-  filename: 'bundle.js',
-  publicPath: '/',
-  stats: {
-    colors: true,
-  },
   historyApiFallback: true,
-}));
-
-const server = app.listen(3000, '127.0.0.1', function() {
-  const host = server.address().address;
-  const port = server.address().port;
-  console.log(server.address());
-  console.log('Turbotron Client listening at http://%s:%s', host, port);
+  stats: {
+    colors: true
+  }
+}).listen(3000, 'localhost', function(err) {
+    if (err) {
+      console.log(err);
+    }
+    console.log('Listening a http://localhost:3000');
 });
+
